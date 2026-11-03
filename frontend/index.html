@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechALL — wykres liniowy</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <span class="navbar-brand mb-0">TechALL</span>
+        <span class="text-white-50 small">Grupa F</span>
+      </div>
+    </header>
+
+    <main class="container py-4">
+      <h1 class="h3 mb-1">Wykres liniowy</h1>
+      <p class="text-secondary mb-1" id="sourceLine">Dane z pliku CSV na serwerze.</p>
+      <p class="text-secondary small">Plik przykładowy nie zawiera rzeczywistych notowań.</p>
+
+      <div id="alert" class="alert alert-danger d-none" role="alert"></div>
+
+      <section class="row g-3 mb-3" aria-label="Podsumowanie notowań">
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="stat-label">Ostatnia cena</div>
+            <div class="stat-value" id="statLast">—</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="stat-label">Zmiana w okresie</div>
+            <div class="stat-value" id="statChange">—</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="stat-label">Minimum</div>
+            <div class="stat-value" id="statMin">—</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="stat-label">Maksimum</div>
+            <div class="stat-value" id="statMax">—</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h6 text-secondary mb-3">Cena zamknięcia</h2>
+          <div class="chart-wrap">
+            <canvas
+              id="priceChart"
+              data-csv="data/cdr.csv"
+              role="img"
+              aria-label="Wykres liniowy ceny zamknięcia. Dane są wczytywane."
+            ></canvas>
+          </div>
+          <p class="text-secondary small mb-0 mt-3" id="chartCaption">Wczytywanie danych…</p>
+        </div>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="container text-danger">Do wyświetlenia wykresu potrzebny jest JavaScript.</p>
+    </noscript>
+
+    <script src="vendor/chart.umd.min.js"></script>
+    <script src="js/line-chart.js"></script>
+  </body>
+</html>

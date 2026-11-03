@@ -1,0 +1,28 @@
+.chart-wrap {
+  position: relative;
+  height: min(70vh, 480px);
+}
+
+.stat {
+  height: 100%;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+}
+
+.stat-label {
+  color: var(--bs-secondary-color);
+  font-size: 0.8rem;
+}
+
+.stat-value {
+  margin-top: 0.2rem;
+  font-size: 1.25rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+body {
+  background: #f4f6f8;
+}
